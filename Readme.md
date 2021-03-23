@@ -27,7 +27,9 @@ todo
 1. 发送含有参数u的请求，服务器返回一段json格式的数据。
 2. 发送含有参数c的请求，服务器返回一段js代码:
 ```js
-todo
+window.A274075A=async function({a}){
+    return new Promise(_=>setTimeout(__=>_(a[0]),2000))
+}
 ```
 3. 发送含有参数u和a的请求，种树成功。
 
@@ -36,17 +38,25 @@ todo
 当然可以选择使用浏览器开发者模式的命令行进行发送，但是对于我等小白来讲，没有什么比python更合适了，引入request和json包，随手撸一个代码，成功拿到1w分。
 
 ```js
-todo
+while True:
+    url = "http://159.75.70.9:8081/pull?u=uid"
+    res=requests.get(url=url)
+    d=json.loads(res.text)
+    a0=d["a"]
+    t=d["t"]
+    url='http://159.75.70.9:8081/push?t=%s&a=%s'%(t,a0[0])
+    res=requests.get(url=url)
+    print(res.text)
 ```
 
-[solve1.py]()
+[solve1.py](https://github.com/duowen1/geektree/blob/master/1.1w/solve1.py)
 
 # 1w-10w
 和第一题相比几乎没有任何的不同，只需要额外进行一次运算，唯一的要求就是能看懂js代码。至于零基础怎么看懂，没啥办法，百度呗。
 
 查看第二次请求返回的js文件，发现对a进行了运算，只需要返回a*a+a即可。
 
-[solve2.py]()
+[solve2.py](https://github.com/duowen1/geektree/blob/master/2.10w/solve2.py)
 
 # 10w-25w
 拿到手的是一大段经过base64编码的代码，解码后进行格式化。
@@ -93,7 +103,7 @@ window[fun('0x0')]=function(arg){
 };
 ```
 
-[solve3.py]()
+[solve3.py](https://github.com/duowen1/geektree/blob/master/3.25w/solve3.py)
 
 # 25w-50w
 直接看js文件，一大段神秘的符号直接把我晃瞎了。没错，就是jsfuck。
@@ -111,7 +121,7 @@ jsfuck还可以通过命令行进行解，但是后续的代码确实要求对js代码的理解有一定深度。这
 
 
 通过静态和动态两种方式，终于理解了代码含义。直接python实现上述逻辑，
-[solve4.py]()
+[solve4.py](https://github.com/duowen1/geektree/blob/master/4.50w/solve4.py)
 
 # 50w-100w
 这一步开始手动点击按钮就出现了明显的时延，没有setTimeout，那么可以断定是算法本身的复杂度造成。
@@ -132,7 +142,7 @@ jsfuck还可以通过命令行进行解，但是后续的代码确实要求对js代码的理解有一定深度。这
 
 
 
-[solve5.py]()
+[solve5.py](https://github.com/duowen1/geektree/blob/master/5.100w/solve5.py)
 
 # 100w-200w
 终于来到100w大关，此时的我现在有点自信心膨胀，于是信心满满的打开了js文件。首先对代码进行格式化，带有缩进的代码可以帮助快速读懂代码的逻辑。
