@@ -49,7 +49,49 @@ todo
 [solve2.py]()
 
 # 10w-25w
-我为啥想不起来这道题目是啥来着
+拿到手的是一大段经过base64编码的代码，解码后进行格式化。
+```js
+var _0xe936=['A5473788'];
+(function(_0x48e85c,_0xe936d8){
+    var _0x23fc5a=function(_0x2858d9){
+        while(--_0x2858d9){
+            _0x48e85c['push'](_0x48e85c['shift']());
+        }
+    };
+    _0x23fc5a(++_0xe936d8);
+}(_0xe936,0x196));
+var _0x23fc=function(_0x48e85c,_0xe936d8){
+    _0x48e85c=_0x48e85c-0x0;
+    var _0x23fc5a=_0xe936[_0x48e85c];
+    return _0x23fc5a;
+};
+window[_0x23fc('0x0')]=function(_0x335437){
+    var _0x1aac02=0x30d3f;
+    for(var _0x3bed6a=0x30d3f;_0x3bed6a>0x0;_0x3bed6a--){
+        var _0x375340=0x0;
+        for(var _0x1ddb77=0x0;_0x1ddb77<_0x3bed6a;_0x1ddb77++){
+            _0x375340+=_0x335437['a'][0x0];
+        }
+        _0x375340%_0x335437['a'][0x2]==_0x335437['a'][0x1]&&_0x3bed6a<_0x1aac02&&(_0x1aac02=_0x3bed6a);
+    }
+    return _0x1aac02;
+};
+```
+
+变量名经过了混淆，简单替换一下变量名，发现真正有意义的只有第三个函数：
+```js
+window[fun('0x0')]=function(arg){
+    var temp=0x30d3f;
+    for(var i=0x30d3f;i>0x0;i--){
+        var m=0x0;
+        for(var j=0x0;j<i;j++){
+            m+=arg['a'][0x0];
+        }
+        m%arg['a'][0x2]==arg['a'][0x1]&&i<temp&&(temp=i);
+    }
+    return temp;
+};
+```
 
 [solve3.py]()
 
