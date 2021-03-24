@@ -3,7 +3,7 @@ import json
 
 while True:
 
-    url = "http://159.75.70.9:8081/pull?u=youruid"
+    url = "http://159.75.70.9:8081/pull?u=000001129E0756BDF50DDA29DC4FFF17"
 
     res=requests.get(url=url)
     #print(res.text)

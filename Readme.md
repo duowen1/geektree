@@ -115,6 +115,21 @@ jsfuck详解可自行google
 
 最简单的解jsfuck的方法就是使用浏览器自带的命令行功能，将jsfuck代码粘贴到命令行可以显示方便阅读的代码。
 
+```javascript
+window.A593C8B8=async(arg)=>(($,window,r,c,d)=>{
+    let fun1=function*(){
+        while([])
+            yield[(a,b)=>a+b,(a,b)=>a-b,(a,b)=>a*b][++r%3]["bind"](0,c,d)
+    }();
+    let fun2=function(a,fun,res){
+        d=a;
+        c=fun["next"]()["value"]();
+        r==window["a"]["length"]&&res(-c)
+    };
+    return new Promise(para=>window["a"]["foreach"](val=>$["setTimeout"](temp=>fun2(val,fun1,para),val)))
+})(window,arg,0,0,0)
+```
+
 ## 解后续
 jsfuck还可以通过命令行进行解，但是后续的代码确实要求对js代码的理解有一定深度。这一关卡很难速成，所以我在这里面卡了很久。但是无论如何，我们还是可以通过静态分析和动态分析相结合的方式了解这段代码的含义。
 
@@ -135,7 +150,29 @@ jsfuck还可以通过命令行进行解，但是后续的代码确实要求对js代码的理解有一定深度。这
 
 做题中的我对这段代码毫无兴趣，只考虑怎么把题目解出来，反正也没说不让使用开源工具，直接跑一下就可以得到一段类似于c语言的代码。
 
-```
+```js
+function jwork5(v0,v1){
+    let v2,v3,v4,v5,v6,v7;
+    v2=v0;
+    v4=v1-1;
+    while(true){
+        v3=v2;
+        v6=0;
+        v7=10;
+        while(true){
+            v5=v3%10;
+            v3=Math.floor(v3/10);
+            v6=Math.max(v5,v6);
+            v7=Math.min(v5,v7);
+            if(v3<=0) break;
+        }
+        v2=v6*v7+v2;
+        v4=v4-1;
+        if(v4<=0) break;
+    }
+    let result=v2;
+    return result;
+}
 ```
 
 
