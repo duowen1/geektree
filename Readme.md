@@ -108,7 +108,7 @@ window[fun('0x0')]=function(arg){
 # 25w-50w
 直接看js文件，一大段神秘的符号直接把我晃瞎了。没错，就是jsfuck。
 
-![jsfuck]()
+![jsfuck](https://github.com/duowen1/geektree/blob/master/4.50w/%E7%BD%91%E9%A1%B5%E6%8D%95%E8%8E%B7_24-3-2021_85415_159.75.70.9.jpeg)
 
 ## 解jsfuck
 jsfuck详解可自行google
